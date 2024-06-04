@@ -1,0 +1,25 @@
+server:
+  port: 8181
+  servlet:
+    context-path: /admin/elaparato
+
+spring:
+  application:
+    name: elaparato-keycloak-admin-service
+  security:
+    oauth2:
+        resourceserver:
+          jwt:
+              issuer-uri: http://localhost:8080/realms/el-aparato-deivid-gonzalez
+
+dh:
+  keycloak:
+    serverUrl: http://localhost:8080
+    realm: el-aparato-deivid-gonzalez
+    clientId: api-internal-users-client
+    clientSecret: EYo1eZpcBaYSIHa03GJU0PpvEz2m265g
+jwt:
+  auth:
+    converter:
+      resource-id: api-gateway-client
+      principal-attribute: preferred_username

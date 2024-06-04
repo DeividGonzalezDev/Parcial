@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  mysql-elaparato:
+    image: mysql:8
+    container_name: mysql-elaparato-deivid-gonzalez
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=elaparato
+    ports:
+      - "3306:3306"
+    restart: unless-stopped
